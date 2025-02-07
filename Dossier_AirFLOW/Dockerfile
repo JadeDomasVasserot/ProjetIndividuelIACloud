@@ -13,9 +13,14 @@ COPY plugins/ plugins/
 COPY train.py .
 COPY airflow.db .
 
-# Définir les variables d'environnement
-ENV AWS_ACCESS_KEY_ID=AKIA3R62MVALLDMAF37Q
-ENV AWS_SECRET_ACCESS_KEY=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
+# Définir des arguments pour passer les clés AWS
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+
+# Définir les variables d'environnement à partir des arguments
+ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+
 
 
 # Commande pour démarrer Airflow

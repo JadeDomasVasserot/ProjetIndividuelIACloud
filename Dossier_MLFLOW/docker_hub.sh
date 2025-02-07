@@ -1,0 +1,1 @@
+docker tag mlflow-server:latest ynov-mlflow:latest

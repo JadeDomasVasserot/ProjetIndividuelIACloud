@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+requests
+jupyter
+python-multipart
+scikit-learn
+mlflow==2.16.1
+boto3
+pillow
+tensorflow

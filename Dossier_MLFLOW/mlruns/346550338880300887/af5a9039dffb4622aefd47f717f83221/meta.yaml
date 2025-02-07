@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/346550338880300887/af5a9039dffb4622aefd47f717f83221/artifacts
+deleted_time: 1738592683073
+end_time: 1738592646026
+entry_point_name: ''
+experiment_id: '346550338880300887'
+lifecycle_stage: deleted
+run_id: af5a9039dffb4622aefd47f717f83221
+run_name: Jade Experiement
+run_uuid: af5a9039dffb4622aefd47f717f83221
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738592641303
+status: 3
+tags: []
+user_id: jadedomas-vasserot
