@@ -1,0 +1,6 @@
+[2025-02-07T14:39:33.441+0000] {logging_mixin.py:190} WARNING - Exception ignored in: <function WeakKeyDictionary.__init__.<locals>.remove at 0xffff9b0c4860>
+[2025-02-07T14:39:33.442+0000] {logging_mixin.py:190} WARNING - Traceback (most recent call last):
+[2025-02-07T14:39:33.447+0000] {logging_mixin.py:190} WARNING -   File "/opt/conda/lib/python3.12/weakref.py", line 369, in remove
+[2025-02-07T14:39:33.450+0000] {logging_mixin.py:190} WARNING -     def remove(k, selfref=ref(self)):
+[2025-02-07T14:39:33.450+0000] {logging_mixin.py:190} WARNING - KeyboardInterrupt: 
+[2025-02-07T14:39:33.511+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs

@@ -1,0 +1,16 @@
+[2025-02-06T15:17:44.772+0000] {processor.py:186} INFO - Started process (PID=991) to work on /opt/conda/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-02-06T15:17:44.774+0000] {processor.py:914} INFO - Processing file /opt/conda/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-02-06T15:17:44.775+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:44.775+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/conda/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-02-06T15:17:44.792+0000] {processor.py:925} INFO - DAG(s) 'example_complex' retrieved from /opt/conda/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-02-06T15:17:45.048+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.047+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG:example_complex
+[2025-02-06T15:17:45.088+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.087+0000] {override.py:1912} INFO - Created Permission View: can edit on DAG:example_complex
+[2025-02-06T15:17:45.125+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.124+0000] {override.py:1912} INFO - Created Permission View: can read on DAG:example_complex
+[2025-02-06T15:17:45.194+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.193+0000] {override.py:1912} INFO - Created Permission View: menu access on DAG Run:example_complex
+[2025-02-06T15:17:45.232+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.231+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG Run:example_complex
+[2025-02-06T15:17:45.268+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.267+0000] {override.py:1912} INFO - Created Permission View: can create on DAG Run:example_complex
+[2025-02-06T15:17:45.304+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.303+0000] {override.py:1915} ERROR - Creation of Permission View Error: (sqlite3.OperationalError) disk I/O error
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-02-06T15:17:45.307+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.306+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-06T15:17:45.340+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.340+0000] {dag.py:3262} INFO - Creating ORM DAG for example_complex
+[2025-02-06T15:17:45.341+0000] {logging_mixin.py:190} INFO - [2025-02-06T15:17:45.341+0000] {dag.py:4180} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-02-06T15:17:45.403+0000] {processor.py:208} INFO - Processing /opt/conda/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.636 seconds

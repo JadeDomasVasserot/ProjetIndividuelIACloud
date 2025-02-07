@@ -1,0 +1,35 @@
+[2025-02-07T14:37:27.642+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-07T14:37:27.653+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: my_training_dag.task_train_model scheduled__2025-02-07T14:14:56.073886+00:00 [queued]>
+[2025-02-07T14:37:27.659+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: my_training_dag.task_train_model scheduled__2025-02-07T14:14:56.073886+00:00 [queued]>
+[2025-02-07T14:37:27.659+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-02-07T14:37:27.667+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): task_train_model> on 2025-02-07 14:14:56.073886+00:00
+[2025-02-07T14:37:27.670+0000] {standard_task_runner.py:72} INFO - Started process 852 to run task
+[2025-02-07T14:37:27.672+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'my_training_dag', 'task_train_model', 'scheduled__2025-02-07T14:14:56.073886+00:00', '--job-id', '913', '--raw', '--subdir', 'DAGS_FOLDER/training_dag.py', '--cfg-path', '/tmp/tmp5_rfqbbb']
+[2025-02-07T14:37:27.673+0000] {standard_task_runner.py:105} INFO - Job 913: Subtask task_train_model
+[2025-02-07T14:37:27.694+0000] {task_command.py:467} INFO - Running <TaskInstance: my_training_dag.task_train_model scheduled__2025-02-07T14:14:56.073886+00:00 [running]> on host 4c0e316c252f
+[2025-02-07T14:37:27.733+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='my_training_dag' AIRFLOW_CTX_TASK_ID='task_train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-02-07T14:14:56.073886+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-07T14:14:56.073886+00:00'
+[2025-02-07T14:37:27.734+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-07T14:37:27.734+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-07T14:37:27.734+0000] {logging_mixin.py:190} INFO - Current task name:task_train_model state:running start_date:2025-02-07 14:37:27.653587+00:00
+[2025-02-07T14:37:27.734+0000] {logging_mixin.py:190} INFO - Dag name:my_training_dag and current dag run status:running
+[2025-02-07T14:37:27.734+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-07T14:37:27.735+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-07T14:37:27.735+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /root/airflow/train.py']
+[2025-02-07T14:37:27.741+0000] {subprocess.py:99} INFO - Output:
+[2025-02-07T14:37:31.495+0000] {subprocess.py:106} INFO - [31m2025/02/07 14:37:31 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+[2025-02-07T14:37:32.626+0000] {subprocess.py:106} INFO - <plugins.utiles.functions.DataBaseV2 object at 0xffff99b7fc20>
+[2025-02-07T14:37:32.630+0000] {subprocess.py:106} INFO - Index(['id_columns', 'sepal_length', 'sepal_width', 'petal_length',
+[2025-02-07T14:37:32.633+0000] {subprocess.py:106} INFO -        'petal_width', 'y'],
+[2025-02-07T14:37:32.633+0000] {subprocess.py:106} INFO -       dtype='object')
+[2025-02-07T14:37:32.633+0000] {subprocess.py:106} INFO - 🏃 View run orderly-conch-997 at: https://quera-server-mlflow-cda209265623.herokuapp.com/#/experiments/276/runs/c286f3d4222d4fdea16e7d1fda08c055
+[2025-02-07T14:37:32.634+0000] {subprocess.py:106} INFO - 🧪 View experiment at: https://quera-server-mlflow-cda209265623.herokuapp.com/#/experiments/276
+[2025-02-07T14:37:32.983+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-07T14:37:32.993+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-07T14:37:32.993+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=my_training_dag, task_id=task_train_model, run_id=scheduled__2025-02-07T14:14:56.073886+00:00, execution_date=20250207T141456, start_date=20250207T143727, end_date=20250207T143732
+[2025-02-07T14:37:32.999+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-07T14:37:33.000+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-07T14:37:33.000+0000] {logging_mixin.py:190} INFO - Dag name:my_training_dag queued_at:2025-02-07 14:37:04.459370+00:00
+[2025-02-07T14:37:33.000+0000] {logging_mixin.py:190} INFO - Task hostname:4c0e316c252f operator:BashOperator
+[2025-02-07T14:37:33.005+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-07T14:37:33.010+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-07T14:37:33.013+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
