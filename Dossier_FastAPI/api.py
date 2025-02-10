@@ -107,9 +107,8 @@ def predict_file(file: UploadFile = File(...)):
 
 
 try:
-    # CONFIGURER DANS HEROKU OU .ENV
-    #os.environ['AWS_ACCESS_KEY_ID'] = "AWS_ACCESS_KEY_ID"
-    #os.environ['AWS_SECRET_ACCESS_KEY'] = "AWS_SECRET_ACCESS_KEY"
+    os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
+    os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
     mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 
     path = mlflow.MlflowClient().get_registered_model('Ever_Married').latest_versions[0].source
@@ -153,6 +152,8 @@ async def predict_digit(file: UploadFile = File(...)):
     Point de terminaison pour effectuer une prédiction à partir d'une image.
     """
     try:
+        os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
+        os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
         mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 
         path = mlflow.MlflowClient().get_registered_model('jade_model_mnist').latest_versions[0].source
@@ -190,6 +191,8 @@ async def predict_digit_cnn(file: UploadFile = File(...)):
     Point de terminaison pour effectuer une prédiction à partir d'une image.
     """
     try:
+        os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
+        os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
         mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 
         path = mlflow.MlflowClient().get_registered_model('jade_domasvasserot_cnn ').latest_versions[0].source

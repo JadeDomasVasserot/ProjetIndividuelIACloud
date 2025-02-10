@@ -11,9 +11,8 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 # Configuration de MLflow
-# CONFIGURER DANS HEROKU OU .ENV
-#os.environ['AWS_ACCESS_KEY_ID'] = "AWS_ACCESS_KEY_ID"
-#os.environ['AWS_SECRET_ACCESS_KEY'] = "AWS_SECRET_ACCESS_KEY"
+os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
+os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
 mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 experiment = mlflow.set_experiment("MNIST Classification - Jade DOMAS-VASSEROT")
 print(experiment.experiment_id)
