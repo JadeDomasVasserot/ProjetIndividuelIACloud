@@ -1,4 +1,4 @@
-Déploiement du front sur Streamlit Cloud : https://dashboard-jade-domas.streamlit.app
+Déploiement du front sur Streamlit Cloud : https://jadedomas.streamlit.app
 
 
 
@@ -10,7 +10,9 @@ Une fonction Azure a été créée via VS Code : NOM --> jadeYnovAPi : https://j
 
 Une machine virtuelle a été créée via VS COde : NOM --> YnovJadeVM + IP : 4.211.204.4
 
+ML FLOW Jade : 
+https://mlflow-ynov-jade-aba876011611.herokuapp.com/
 
-
-TODO : 
-Deploy Streamlit new version with good backend
+TODO
+Problème backend chargement modèle MNIST
+Le modèle n'est pas chargé ? Identifiant AWS not permitted

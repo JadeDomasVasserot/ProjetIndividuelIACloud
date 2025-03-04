@@ -80,12 +80,17 @@ class InputData(BaseModel):
     Segmentation: str
 
 
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+
 
 
 @app.post("/predict", tags=['Model'])
 def predict(data: InputData):
+    try:
+        with open('model.pkl', 'rb') as f:
+            model = pickle.load(f)
+    except Exception as e:
+        model = None
+        print(f"Erreur lors du chargement du modèle : {e}")
     input_data = pd.DataFrame([data.dict()])
     prediction = model.predict(input_data)[0]
     if prediction == 0:
@@ -106,25 +111,25 @@ def predict_file(file: UploadFile = File(...)):
         return [int(n) for n in model.predict(x)]
 
 
-try:
-    os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
-    os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
-    mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 
-    path = mlflow.MlflowClient().get_registered_model('Ever_Married').latest_versions[0].source
-    model = mlflow.pyfunc.load_model(path)
-    print("Modèle chargé avec succès depuis MLflow.")
-except Exception as e:
-    model = None
-    print(f"Erreur lors du chargement du modèle : {e}")
 
 
 @app.post("/predict-model", tags=["Model"])
 def predict(data: InputData):
+    try:
+        os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALLDMAF37Q"
+        os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
+        mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
+        path = mlflow.MlflowClient().get_registered_model('Ever_Married').latest_versions[0].source
+        model_ml = mlflow.pyfunc.load_model(path)
+        print("Modèle chargé avec succès depuis MLflow.")
+    except Exception as e:
+        model_ml = None
+        print(f"Erreur lors du chargement du modèle : {e}")
     """
     Point de terminaison pour effectuer une prédiction.
     """
-    if model is None:
+    if model_ml is None:
         raise HTTPException(status_code=500, detail="Le modèle n'est pas chargé.")
 
     try:
@@ -132,7 +137,7 @@ def predict(data: InputData):
         input_data = pd.DataFrame([data.dict()])
 
         # Effectuer la prédiction avec le modèle chargé depuis MLflow
-        prediction = model.predict(input_data)
+        prediction = model_ml.predict(input_data)
 
         if prediction == 0:
             return "Not married"
@@ -195,7 +200,7 @@ async def predict_digit_cnn(file: UploadFile = File(...)):
         os.environ['AWS_SECRET_ACCESS_KEY'] = "zbe6/anZM6NaCvOj+tUMY6RuT2BiwMBMvNqrXyoV"
         mlflow.set_tracking_uri("https://quera-server-mlflow-cda209265623.herokuapp.com/")
 
-        path = mlflow.MlflowClient().get_registered_model('jade_domasvasserot_cnn ').latest_versions[0].source
+        path = mlflow.MlflowClient().get_registered_model('jade_domasvasserot_cnn').latest_versions[0].source
         model = mlflow.pyfunc.load_model(path)
         print("Modèle chargé avec succès depuis MLflow.")
     except Exception as e:
